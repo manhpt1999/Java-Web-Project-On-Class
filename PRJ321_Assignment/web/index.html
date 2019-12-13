@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+        <style>
+            *, *:before, *:after { box-sizing: inherit; }
+
+            html { box-sizing: border-box; }
+
+            body {
+                background: #f1c40f;
+                font-family: 'Open Sans', sans-serif;
+                padding: 2em;
+            }
+
+            form {
+                margin: 1em auto 0;
+                max-width: 400px;
+                position: relative;
+            }
+
+            input,
+            button {
+                border: none;
+                display: block;
+                outline: none;
+                padding: 1em 2em;
+                transition: all 0.3s;
+                width: 100%;
+            }
+
+            input {
+                color: #333;
+                position: absolute;
+                top: 0;
+                z-index: -1;
+            }
+
+            button {
+                background: #3498db;
+                color: #fff;
+                font-weight: bold;
+                text-transform: uppercase;
+            }
+
+            button.animate { background: #e74c3c; }
+
+            .input-1.animate { top: 120%; }
+            .input-2.animate { top: 240%; }
+            .input-3.animate { top: 360%; }
+
+        </style>
+    </style>
+</head>
+
+<body>
+    <form action="#">
+        <button type="submit">subscribe</button>
+        <input class="input-1" type="text" placeholder="Enter your name" />
+        <input class="input-2" type="text" placeholder="Enter your surname" />
+        <input class="input-3" type="text" placeholder="Enter your email" />
+    </form>
+    <script>
+        $('button').click(function (e) {
+            $('input, button').toggleClass('animate');
+            if ($(this).text() == 'subscribe') {
+                $(this).text('submit');
+            } else {
+                $(this).text('subscribe');
+            }
+        });
+    </script>
+  
+</body>
+</html>
